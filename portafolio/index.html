@@ -1,1 +1,103 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name – Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Cloud Engineer | DevOps | Developer</p>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate tech professional specializing in cloud infrastructure, DevOps automation, and scalable backend systems.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Brief description of the project.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Brief description of another project.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:admin@yourdomain.com">admin@yourdomain.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourhandle" target="_blank">yourhandle</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourhandle" target="_blank">yourhandle</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
