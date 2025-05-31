@@ -3,13 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name – Portfolio</title>
+  <title>Kevinn Ramirez – Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="/js/script.js" defer></script>
 </head>
 <body>
+
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria- aria-controls="navbar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M15.00195,0.75586l-0.5,0.28711l-4,2.30078l-0.50195,0.28711v0.58008v4.61914v0.57617l0.5,0.28906l24,13.86133l0.5,0.28906l0.5,-0.28906l4,-2.31055l0.5,-0.28906v-0.57617v-4.62109v-0.57812l-0.5,-0.28906l-24,-13.84961zM15,2.19531l23.5,13.56641l-3.5,2.02148l-23.49805,-13.56836zM11.25,4.64453l23.5,13.57227v4.04102l-23.5,-13.56641zM15,13.45508l-0.5,0.28906l-4,2.31055l-0.5,0.28906v0.57617v4.61914v0.57813l0.5,0.28906l24,13.85156l0.5,0.28906l0.5,-0.28906l4,-2.31055l0.5,-0.28906v-0.57812v-4.61914v-0.57813l-0.5,-0.28906l-24,-13.85156zM15,14.89648l23.50195,13.56836l-3.50195,2.01953l-23.49805,-13.56836zM38.75,16.19531v4.04102l-3.5,2.02148v-4.04102zM11.25,17.34766l23.5,13.57031v4.04102l-23.5,-13.56641zM15,26.1543l-0.5,0.28906l-4,2.31055l-0.5,0.28906v0.57617v4.62109v0.57813l0.5,0.28906l24,13.84961l0.5,0.28906l0.5,-0.28906l4,-2.31055l0.5,-0.28906v-0.57812v-4.60937v-0.57617l-0.5,-0.28906l-24,-13.86133zM15,27.59766l23.5,13.56836l-3.5,2.01953l-23.49609,-13.56836zM38.75,28.89648v4.04297l-3.5,2.01953v-4.04102zM11.25,30.04883l23.5,13.57031v4.04102l-23.5,-13.56641zM38.75,41.59961v4.04102l-3.5,2.01953v-4.04102z"></path></g></g></svg>
+  </button>
+  <nav id="navbar">
+    <ul>
+      <li><button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M20.36523,3.42383l-0.86523,0.5l-4,2.31055l-5,2.88867l-0.86523,0.5l0.5,0.86719l7.5,12.99219l-7.13281,4.11133l-0.86719,0.5l0.5,0.86719l4,6.92969l0.5,0.86523l0.86719,-0.5l7.13281,-4.11914l7.5,12.99414l0.5,0.86523l0.86719,-0.5l5,-2.89062l4,-2.30859l0.86523,-0.5l-0.5,-0.86719l-7.5,-12.98438l7.13477,-4.11914l0.86523,-0.5l-0.5,-0.86523l-4,-6.93164l-0.5,-0.86524l-0.86523,0.5l-7.13477,4.11914l-7.5,-12.99414zM19.9082,5.13086l7.75,13.42773l-3.56641,2.05859l-7.75,-13.42578zM15.9082,7.44141l7.875,13.64258c0.03311,0.05754 0.08775,0.09956 0.15186,0.11678c0.06412,0.01722 0.13245,0.00823 0.18993,-0.02498l3.98438,-2.30078c0.0053,-0.00242 0.01051,-0.00503 0.01563,-0.00781l3.7832,-2.18555l3.75195,6.49609l-3.78516,2.18555c-0.00739,0.00419 -0.01456,0.00875 -0.02148,0.01367l-3.97852,2.29297c-0.05754,0.03311 -0.09956,0.08775 -0.11678,0.15186c-0.01722,0.06412 -0.00823,0.13245 0.02498,0.18993l7.875,13.63672l-4.56641,2.64062l-7.875,-13.64453c-0.03311,-0.05754 -0.08775,-0.09956 -0.15186,-0.11678c-0.06412,-0.01722 -0.13245,-0.00823 -0.18993,0.02498l-7.7832,4.49609l-3.75,-6.49805l7.7832,-4.48437c0.05754,-0.03311 0.09956,-0.08775 0.11678,-0.15186c0.01722,-0.06412 0.00823,-0.13245 -0.02498,-0.18993l-7.875,-13.64258zM35.9082,14.37109l3.75,6.49805l-3.56445,2.05859l-3.75195,-6.49609zM31.9082,25.92188l7.75,13.41602l-3.56641,2.06055l-7.75,-13.41992z"></path></g></g></svg>
+      </button></li>
+      <li class="home-li"><a class="active-link" aria-current="page" href="index.html">Kevinn Ramirez</a></li>
+      <li><a href="who_am_i.html">Who am I</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="certifications.html">Certifications</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="accent-link" href="resume.html">Download Resume</a></li>
+    </ul>
+  </nav>
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+
   <header>
-    <h1>Your Name</h1>
-    <p>Cloud Engineer | DevOps | Developer</p>
+    <h1>Kevinn Ramirez</h1>
+    <p>IT support specialist | Cloud Engineer in progress | Developer</p>
     <a href="#contact" class="btn">Contact Me</a>
   </header>
 
@@ -36,68 +57,29 @@
     </div>
   </section>
 
+  <section id="certifications">
+    <h2>Certifications</h2>
+   ![]()
+
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:admin@yourdomain.com">admin@yourdomain.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourhandle" target="_blank">yourhandle</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourhandle" target="_blank">yourhandle</a></p>
+    <div class="socials-container">
+      <a data-social="Gmail" style="--accent-color: #EA4335;" href="mailto:admin@yourdomain.com">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+    </a>
+    <a data-social="GitHub" style="--accent-color: #2f81f7;"href="https://github.com/kevinnra">
+      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+    </div>
+    
   </section>
 
   <footer>
-    <p>© 2025 Your Name. All rights reserved.</p>
+    <p>© 2025 Kevinn Ramirez. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>
 </body>
 </html>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
-}
-
-header {
-  background: #111;
-  color: #fff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #0077cc;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
