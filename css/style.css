@@ -4,11 +4,13 @@
 
 :root{
   --primary-color: #11121a;
-  --hover-color: #414cc2;
+  --hover-color: #1e2035;
   --accent-color: #af4f00;
   --text-color: #c9c9c9;
   --t-color: #15ff24;
   --fullwhite: #ffffff;
+  --Poppins: "Poppins", "Segoe UI", sans-serif;
+  --Code-pro: "Source Code Pro", monospace;
 }
 *{
     margin: 0;
@@ -25,7 +27,10 @@ html{
 main{
   padding: min(5em, 7%);
 }
-
+header{
+  margin-top: 60px;
+  border: solid 1px orchid;
+}
 main p{
   margin-top: .35em;
 }
@@ -34,6 +39,9 @@ nav{
   background-color: var(--primary-color);
   border-bottom: none;
   border-bottom: 1px solid var(--hover-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 nav ul{
@@ -71,8 +79,6 @@ nav a.active-link{
 }
 
 nav a.accent-link{
-  /* padding: 0.5em;
-  margin: 10px; */
   font-weight:500;
   background-color: var(--accent-color);
 }
@@ -83,21 +89,28 @@ nav a.accent-link:hover{
 }
 
 #open-sidebar-button{
-  display: none;
-  background: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* width: 100%; */
   border: none;
-  padding: 3em;
-  margin-left: auto;
+  padding: 1em;
+  height: 59px;
   cursor: pointer;
+  display: none;
+  z-index: 9;
+  background:var(--primary-color)
 }
+
 #close-sidebar-button{
   display: none;
   background: none;
   border: none;
-  padding: 3em;
-  margin-left: auto;
+  padding: 1em;
   cursor: pointer;
+  margin-left: auto;
 }
+
 #overlay{
   background: rgba(0,0,0,0.7);
   position: fixed;
@@ -109,13 +122,41 @@ nav a.accent-link:hover{
   #open-sidebar-button, #close-sidebar-button{
     display: block;
   }
+  
+  #topbar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    z-index: 10;
+    border-bottom: 1px solid var(--hover-color);
+  }
+  .home-link-topbar {
+    font-family: var(--Code-pro);
+    color: var(--fullwhite);
+    text-decoration: none;
+    font-size: 1.1em;
+    
+  }
+  #open-sidebar-button svg{
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin-left: auto;
+}
   nav{
     position: fixed;
     top: 0;
     right: -100%;
     /* 100dvh ?? */
     height: 100vh;
-    width: min (15em, 100%);
+    width: min(15em, 100%);
     z-index: 10;
     border-left: 1px solid var(--hover-color);
     transition: right 300ms ease-out;
@@ -134,13 +175,19 @@ nav a.accent-link:hover{
     width: 100%;
     padding-left: 2.5em;
   }
-  nav a.active-link{
+  /* nav a.active-link{
     border-bottom: none;
-  }
+  } */
   nav .home-li{
-    margin-right: unset;
+    display: none;
+    /* margin-right: unset; */
   }
+  header {
+  margin-top: 30px;
+}
 } 
+
+
 
 body {
   margin: 0;
