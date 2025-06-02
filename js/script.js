@@ -4,7 +4,7 @@ console.log("Portfolio loaded.");
 const openButton = document.getElementById('open-sidebar-button')
 const navbar = document.getElementById('navbar')
 
-const media = window.matchMedia("(width < 1180px)")
+const media = window.matchMedia("(width < 809px)")
 
 
 media.addEventListener('change', (e) => updateNavbar(e))
@@ -39,5 +39,20 @@ navLinks.forEach(link => {
     closeSidebar()
   })
 })
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    // Ignore links that don't point to actual IDs
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
 
 updateNavbar(media)

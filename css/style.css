@@ -11,6 +11,7 @@
   --fullwhite: #ffffff;
   --Poppins: "Poppins", "Segoe UI", sans-serif;
   --Code-pro: "Source Code Pro", monospace;
+  --Changa: "Changa One", italic;
 }
 *{
     margin: 0;
@@ -19,20 +20,37 @@
     /* text-decoration: none; */
 }
 html{
-  font-family: Poppins, "Segoe UI", sans-serif;
+  font-family: var(--Poppins);
   color: var(--text-color);
   background-color: var(--primary-color);
+  scroll-padding-top: 50px;
 }
 
 main{
   padding: min(5em, 7%);
 }
-header{
-  margin-top: 60px;
-  border: solid 1px orchid;
-}
+
 main p{
   margin-top: .35em;
+}
+
+header{
+  margin-top: 60px;
+  color: var(--text-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--hover-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn:hover{
+  background: var(--accent-color);
 }
 
 nav{
@@ -47,6 +65,7 @@ nav{
 nav ul{
   list-style: none;
   display: flex;
+  justify-content: space-between;
 }
 
 nav .home-li{
@@ -58,7 +77,7 @@ nav li{
 }
 nav a{
   display: flex;
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--Code-pro);
   font-optical-sizing: auto;
   font-weight: lighter;
   text-decoration: none;
@@ -81,13 +100,143 @@ nav a.active-link{
 nav a.accent-link{
   font-weight:500;
   background-color: var(--accent-color);
+  /* border-radius: 6px; */
 }
+
 nav a.accent-link:hover{
   background-color: var(--hover-color);
   color: var(--fullwhite);
   font-weight: bolder;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: var(--primary-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 40px 10px;
+  max-width: 950px;
+  margin: auto;
+} 
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+  font-family: var(--Code-pro);
+}
+.section-divider .line {
+  height: 0.5px;
+  background-color: var(--text-color);
+  flex: 1;
+}
+/* who am I */
+.text-aboutme{
+  padding: 1.5em;
+  text-align: center;
+  font-weight: lighter;
+}
+strong{
+  color: var(--accent-color);
+}
+/* projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--text-color);
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* certifications*/
+.images-container{
+  display: grid;
+  grid-template-columns: 
+  repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--Poppins);
+  font-size: smaller;
+  text-align:center;
+}
+img{
+  height: auto;
+  width: 200px;
+}
+#squared-image{
+  height: 130px;
+  width: 120px;
+}
+.image-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  /* border: solid 1px var(--t-color) */
+}
+.cert-code{
+  font-family: var(--Code-pro);
+  font-weight: lighter;
+}
+.cert-place_and_name{
+  margin-top: 7px;
+}
+.course-status {
+  font-weight:100;
+}
+.cert-link{
+  color: var(--accent-color);
+  font-size: x-small;
+}
+
+
+/* contact section */
+#contact{
+  min-height: 400px;display: flex;
+}
+
+
+
+footer {
+  display: block;
+  background: var(--hover-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
+}
+
+#home-logo-container{
+  padding: 0;
+  margin: 0;
+  /* border: solid 1px var(--t-color); */
+}
+#home-logo{
+  height: 45px;
+  width: 45px;
+  padding: 0.3em;
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-right: auto;
+  /* border: solid 1px pink; */
+  fill: var(--fullwhite);
+  display: none;
+  cursor: pointer;
+  border-bottom: solid 2px var(--text-color);
+  
+
+}
 #open-sidebar-button{
   position: fixed;
   top: 0;
@@ -118,11 +267,13 @@ nav a.accent-link:hover{
   z-index: 9;
   display: none;
 }
-@media screen and (max-width: 1180px){
+
+/* mobile styles */
+@media screen and (max-width: 809px){
   #open-sidebar-button, #close-sidebar-button{
     display: block;
   }
-  
+
   #topbar-menu {
     position: fixed;
     top: 0;
@@ -136,6 +287,7 @@ nav a.accent-link:hover{
     padding: 0 1em;
     z-index: 10;
     border-bottom: 1px solid var(--hover-color);
+    
   }
   .home-link-topbar {
     font-family: var(--Code-pro);
@@ -149,6 +301,10 @@ nav a.accent-link:hover{
   height: 40px;
   display: block;
   margin-left: auto;
+  padding-bottom: 0.5em;
+  /* border: solid 1px pink; */
+  
+
 }
   nav{
     position: fixed;
@@ -187,50 +343,57 @@ nav a.accent-link:hover{
 }
 } 
 
+/* Ipad and  small displays styles */
+@media screen and (max-width: 1240px) and (min-width: 810px) {
+  
+  nav{
+    padding: 0;
+    margin: 0;
+    
+    /* border: solid 2px burlywood; */
+  }
+  nav ul {
+    /* list-style: none; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    /* padding: 0 0.5em; */
+    /* border: solid 1px orange; */
+  }
 
+  nav li {
+    /* flex: 1 1 auto; */
+    /* border: solid 1px orange; */
+  }
 
-body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background: var(--primary-color);
+  nav a {
+    font-size: 0.9em;
+    padding: 0.8em 1em;
+  }
+  #home-logo{
+    display: block;
+    margin-right: auto;
+  }
+
+  nav .home-li {
+    display: none;
+    /* font-size: 1em;
+    font-weight: bold;
+    padding-left: 0;
+    padding-right: 0.1em; */
+  }
+
 }
 
-header {
-  color: var(--text-color);
-  padding: 60px 20px;
-  text-align: center;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  border: solid 2px rgb(1, 228, 77);
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-} 
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: var(--text-color);
-  padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
+/* gmail and github */
 .socials-container {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   gap: 50px;
-  /* border: solid 2px blueviolet; */
-
 }
 .socials-container a{
   background-color: var(--text-color);
@@ -286,11 +449,3 @@ section {
   opacity: 1;
 }
 
-
-footer {
-  display: block;
-  background: var(--hover-color);
-  color: var(--text-color);
-  text-align: center;
-  padding: 20px;
-}
