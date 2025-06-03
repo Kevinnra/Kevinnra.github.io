@@ -60,6 +60,7 @@ nav{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 nav ul{
@@ -87,6 +88,7 @@ nav a{
 }
 
 nav a:hover{
+  transition: background-color 0.4s ease;
   background-color: var(--hover-color);
   color: var(--fullwhite);
   font-weight: bold;
@@ -104,6 +106,7 @@ nav a.accent-link{
 }
 
 nav a.accent-link:hover{
+  transition: background-color 0.4s ease;
   background-color: var(--hover-color);
   color: var(--fullwhite);
   font-weight: bolder;
@@ -152,12 +155,96 @@ strong{
   gap: 20px;
 }
 
+
 .project-card {
-  background: var(--text-color);
   padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: var(--hover-color);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  margin: 1em auto;
+  color: var(--text-color);
+  font-family: var(--Poppins);
 }
+
+.card-header {
+  position: relative;
+  z-index: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+
+.card-title {
+  position: absolute;
+  width: 100%;
+  bottom: 7px;
+  padding: 1em;
+  /* left: 10px; */
+  color: var(--fullwhite);
+  background: #000000b9;
+}
+
+.card-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.project-badge {
+  display: inline-block;
+  margin-top: 0.5em;
+  background-color: #f6ff00;
+  color: var(--primary-color);
+  font-weight: lighter;
+  padding: 0.2em 0.6em;
+  border-radius: 5px;
+  font-size: 0.7em;
+}
+
+.card-body {
+  padding: 1em;
+  font-size: 0.95em;
+  color: var(--text-color);
+}
+.card-body h3{
+  font-family: var(--Code-pro);
+  margin-bottom: 0.7em;
+}
+.card-body li{
+  font-family: var(--Code-pro);
+  margin-bottom: 2em;
+}
+.read-more-link {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 0.5em;
+}
+
+.read-more-link:hover {
+  transition: color 0.4s ease;
+  color: #f6ff00;
+  text-decoration: underline;
+}
+
+.card-footer {
+  padding: 0.8em 1em;
+  font-weight: lighter;
+  color: #149b67;
+}
+
+.company-name {
+  font-weight: 700;
+}
+
 
 /* certifications*/
 .images-container{
@@ -303,9 +390,7 @@ footer {
   margin-left: auto;
   padding-bottom: 0.5em;
   /* border: solid 1px pink; */
-  
-
-}
+  }
   nav{
     position: fixed;
     top: 0;
@@ -341,9 +426,12 @@ footer {
   header {
   margin-top: 30px;
 }
+  .btn {
+    background-color: var(--accent-color);
+  }
 } 
 
-/* Ipad and  small displays styles */
+/* Ipad and  small displays styles but bigger than mobile */
 @media screen and (max-width: 1240px) and (min-width: 810px) {
   
   nav{
@@ -385,8 +473,13 @@ footer {
     padding-left: 0;
     padding-right: 0.1em; */
   }
+  .btn {
+    background-color: var(--accent-color);
+  }
 
 }
+
+
 
 /* gmail and github */
 .socials-container {
@@ -420,10 +513,11 @@ footer {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transform: translateY(-40px) translateX(-25px) rotate(25deg);
   opacity: 0;
-  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+  transition: 400ms cubic-bezier(.42,0,.44,1.68);
 }
 
 .socials-container a:hover{
+  transition: background-color 0.4s ease;
   background-color: var(--accent-color);
   fill: var(--fullwhite);
 }
@@ -438,7 +532,7 @@ footer {
   border-top: 10px solid var(--accent-color);
   transform: translateY(-28px) translateX(-25px);
   opacity: 0;
-  transition: 200ms cubic-bezier(.42,0,.44,1.68);
+  transition: 400ms cubic-bezier(.42,0,.44,1.68);
 }
 .socials-container a:hover::before{
   transform: translateY(-65px) translateX(-25px) rotate(0);
@@ -449,3 +543,91 @@ footer {
   opacity: 1;
 }
 
+
+
+
+
+
+/* projects page */
+.return-button {
+  display: inline-block;
+  margin-top: 5em;
+  margin-left: 1em;
+  padding: 0.6em 1.2em;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.return-button:hover {
+  transition: color 0.4s ease;
+  color: var(--accent-color);
+}
+
+#project-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#project-title{
+  max-width: 900px;
+  text-align: center;
+}
+#project-image-container{
+  align-self: center;
+  margin: 1em;
+  height: auto;
+  /* width: 100%; */
+  /* border: solid 1px pink; */
+}
+#project-image{
+  height: auto;
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  object-fit: cover;
+}
+
+#project-description{
+  max-width: 800px;          
+  margin: 2em auto;          
+  padding: 3em;            
+  background-color: var(--hover-color); 
+  border-radius: 10px;       
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.927); 
+}
+#project-description h2{
+  font-family: var(--Code-pro);
+  margin-bottom: 2em;
+}
+#project-description li{
+  font-family: var(--Code-pro);
+  margin-bottom: 2em;
+}
+#github-link-container{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#github-link-container svg{
+  height: 40px;
+  width: 40px;
+  fill: var(--text-color);
+}
+
+.github-link{
+  background-color: var(--accent-color);
+  font-family: var(--Code-pro);
+  font-size: larger;
+  font-weight:500;
+  color: var(--text-color);
+  text-decoration:none;
+  width: 10em;
+  text-align: center;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+.github-link:hover{
+  background-color:var(--hover-color);
+}
