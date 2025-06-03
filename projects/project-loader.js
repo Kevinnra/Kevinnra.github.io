@@ -1,0 +1,84 @@
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+function loadProject() {
+  const projectId = getQueryParam("project");
+  const project = projects[projectId];
+
+  if (!project) {
+    document.getElementById("project-content").innerHTML = `<p>Project not found.</p>`;
+    return;
+  }
+
+  document.getElementById("project-title").textContent = project.title;
+  document.getElementById("project-image").src = project.image;
+  document.getElementById("project-image").alt = project.title;
+  document.getElementById("project-description").innerHTML = project.description;
+  document.getElementById("project-company").textContent = project.company;
+}
+
+// vavbar
+
+
+window.onload = loadProject;
+
+// Add any future interactivity here
+console.log("Portfolio loaded.");
+
+const openButton = document.getElementById('open-sidebar-button')
+const navbar = document.getElementById('navbar')
+
+const media = window.matchMedia("(width < 809px)")
+
+
+media.addEventListener('change', (e) => updateNavbar(e))
+
+function updateNavbar(e){
+  const isMobile = e.matches
+  console.log(isMobile)
+  if(isMobile){
+    navbar.setAttribute('inert', '')
+  }
+  else{
+    // desktop device
+    navbar.removeAttribute('inert')
+  }
+}
+
+function openSidebar(){
+    navbar.classList.add('show')
+    openButton.setAttribute('aria-expanded', 'true')
+    navbar.removeAttribute('inert')
+}
+
+function closeSidebar(){
+    navbar.classList.remove('show')
+    openButton.setAttribute('aria-expanded', 'false')
+    navbar.setAttribute('inert')
+}
+
+const navLinks = document.querySelectorAll('nav a')
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    closeSidebar()
+  })
+})
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    // Ignore links that don't point to actual IDs
+    const targetId = this.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+});
+
+updateNavbar(media)
