@@ -8,7 +8,7 @@
   --accent-color: #af4f00;
   --bold-color:#d66a12ea;
   --text-color: #c9c9c9;
-  --t-color: #15ff24;
+  --t-color: #e3e717ea;
   --fullwhite: #ffffff;
   --Poppins: "Poppins", "Segoe UI", sans-serif;
   --Code-pro: "Source Code Pro", monospace;
@@ -218,7 +218,7 @@ strong{
 .project-badge {
   display: inline-block;
   margin-top: 0.5em;
-  background-color: #f6ff00;
+  background-color: var(--t-color);
   color: var(--primary-color);
   font-weight: lighter;
   padding: 0.2em 0.6em;
@@ -248,7 +248,7 @@ strong{
 
 .read-more-link:hover {
   transition: color 0.4s ease;
-  color: #f6ff00;
+  color: var(--t-color);
   text-decoration: underline;
 }
 
@@ -306,7 +306,7 @@ img{
 }
 .cert-link:hover{
   transition: color 0.4s;
-  color: #f6ff00;
+  color: var(--t-color);
   font-size: x-small;
 }
 
@@ -632,7 +632,8 @@ footer {
 #github-link-container{
   display: flex;
   justify-content: center;
-  gap: 10px;
+  /* align-items: center;
+  gap: 10px; */
 }
 
 #github-link-container svg{
@@ -642,24 +643,25 @@ footer {
 }
 
 .github-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   background-color: var(--accent-color);
   font-family: var(--Code-pro);
   font-size: larger;
   font-weight:500;
   color: var(--text-color);
   text-decoration:none;
-  width: 10em;
   text-align: center;
   border-radius: 8px;
   padding: 0.5em;
 }
 .github-link:hover{
   transition: background-color 0.4s;
+  transition: color 0.4s;
   background-color: var(--hover-color);
-  color: #15ff24;;
+  color: var(--t-color);
   
 }
-#github-link-container:hover svg{
-  transition: fill 0.4s;
-  fill: #15ff24;
-}
+
