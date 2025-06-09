@@ -203,7 +203,6 @@ strong{
   width: 100%;
   bottom: 7px;
   padding: 1em;
-  /* left: 10px; */
   color: var(--fullwhite);
   background: #000000b9;
 }
@@ -288,8 +287,8 @@ img{
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-  /* border: solid 1px var(--t-color) */
 }
+
 .cert-code{
   font-family: var(--Code-pro);
   font-weight: lighter;
@@ -329,8 +328,8 @@ footer {
 #home-logo-container{
   padding: 0;
   margin: 0;
-  /* border: solid 1px var(--t-color); */
 }
+
 #home-logo{
   height: 45px;
   width: 45px;
@@ -350,7 +349,6 @@ footer {
   position: fixed;
   top: 0;
   right: 0;
-  /* width: 100%; */
   border: none;
   padding: 1em;
   height: 59px;
@@ -459,24 +457,13 @@ footer {
   nav{
     padding: 0;
     margin: 0;
-    
-    /* border: solid 2px burlywood; */
   }
+
   nav ul {
-    /* list-style: none; */
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    /* padding: 0 0.5em; */
-    /* border: solid 1px orange; */
-  }
-
-  nav li {
-    /* flex: 1 1 auto; */
-    /* border: solid 1px orange; */
+    
   }
 
   nav a {
@@ -490,14 +477,12 @@ footer {
 
   nav .home-li {
     display: none;
-    /* font-size: 1em;
-    font-weight: bold;
-    padding-left: 0;
-    padding-right: 0.1em; */
   }
+
   .btn {
     background-color: var(--accent-color);
   }
+
   .home-link-topbar{
     display: none;
   }
@@ -508,10 +493,13 @@ footer {
 
 /* gmail and github */
 .socials-container {
-  margin-top: 40px;
   display: flex;
   justify-content: center;
+  margin-top: 50px;
+  margin-right: 50px;
+  display: flex;
   gap: 50px;
+  
 }
 .socials-container a{
   background-color: var(--text-color);
@@ -539,10 +527,11 @@ footer {
   transform: translateY(-40px) translateX(-25px) rotate(25deg);
   opacity: 0;
   transition: 400ms cubic-bezier(.42,0,.44,1.68);
+  
 }
 
 .socials-container a:hover{
-  transition: background-color 0.4s ease;
+  transition: background-color 0.3s ease;
   background-color: var(--accent-color);
   fill: var(--fullwhite);
 }
@@ -557,8 +546,9 @@ footer {
   border-top: 10px solid var(--accent-color);
   transform: translateY(-28px) translateX(-25px);
   opacity: 0;
-  transition: 400ms cubic-bezier(.42,0,.44,1.68);
+  transition: 300ms cubic-bezier(.42,0,.44,1.68);
 }
+/* hover */
 .socials-container a:hover::before{
   transform: translateY(-65px) translateX(-25px) rotate(0);
   opacity: 1;
@@ -568,7 +558,32 @@ footer {
   opacity: 1;
 }
 
+/* animate on scroll */
+.socials-container.scroll-animate a::before {
+  transition: opacity 0.9s;
+  transform: translateY(-65px) translateX(-25px) rotate(0deg);
+  opacity: 1;
+}
 
+.socials-container.scroll-animate a::after {
+  transition: opacity 0.9s;
+  transform: translateY(-28px) translateX(-25px) rotate(0);
+  opacity: 1;
+}
+.socials-container.scroll-animate a {
+  transition: background-color 0.3s ease;
+  transition: fill 1s ease;
+  background-color: var(--accent-color);
+  fill: var(--fullwhite);
+}
+.socials-container.scroll-animate a:hover::before{
+  transform: translateY(-65px) translateX(-25px) rotate(0);
+  opacity: 1;
+}
+.socials-container.scroll-animate a:hover::after{
+  transform: translateY(-28px) translateX(-25px) rotate(0);
+  opacity: 1;
+}
 
 
 
@@ -602,8 +617,7 @@ footer {
   align-self: center;
   margin: 1em;
   height: auto;
-  /* width: 100%; */
-  /* border: solid 1px pink; */
+  
 }
 #project-image{
   height: auto;

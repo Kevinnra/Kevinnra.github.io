@@ -55,4 +55,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("scroll-animate");
+      } else {
+        entry.target.classList.remove("scroll-animate");
+      }
+    });
+  }, {
+    threshold: 1
+  });
+
+  const socialsContainer = document.querySelector(".socials-container");
+  if (socialsContainer) {
+    observer.observe(socialsContainer);
+  }
+});
+
+
 updateNavbar(media)
