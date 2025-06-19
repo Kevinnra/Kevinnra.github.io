@@ -12,7 +12,7 @@ const projects = {
     image: "/images/python-automate.jpg",
     description:"<h2>Key Features</h2><ul><li> Wrote <strong>Python</strong> scripts to automate ticket creation in <strong>Freshdesk</strong> via its <strong>REST API</strong>, simulating real-world <strong>ITSM</strong> scenarios. </li><li> Developed a ticket categorization tool (e.g., prioritizes tickets based on keywords like '<strong>outage</strong>' or '<strong>password</strong>').</li><li> Used <strong>requests</strong> and <strong>JSON</strong> manipulation to build, send, and validate API payloads, mimicking enterprise automation workflows.</li></ul>",
     company: "IT SUPPORT",
-    githubAvailable: "no",
+    githubAvailable: "yes",
     githubUrl: "https://github.com/Kevinnra/ActiveDirectory_HomeLab/blob/main/Scripts/Freshdesk-Integration/FreshdeskAPI.py"
   },
   "aws-portfolio-hosting": {
