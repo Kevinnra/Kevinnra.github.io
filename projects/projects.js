@@ -5,7 +5,7 @@ const projects = {
     description:"<h2>Key Features</h2><ul><li> Built a fully functional <strong>IT environment</strong> using <strong>Windows Server 2022</strong> and <strong>Windows 10</strong> clients in <strong>VirtualBox</strong>.</li><li> Deployed and configured <strong>Active Directory</strong>, <strong>Organizational Units</strong>, and created <strong>user accounts</strong> via GUI and <strong>PowerShell</strong>.</li><li> Designed and enforced <strong>Group Policies</strong> for <strong>password complexity</strong> and <strong>screensaver locks</strong>. </li><li> Simulated helpdesk operations with <strong>Freshdesk</strong>, resolving 20+ mock tickets covering <strong>password resets</strong>, <strong>account lockouts</strong>, and <strong>GPO</strong> troubleshooting. </li><li> Integrated <strong>Freshdesk API</strong> with <strong>Python</strong> to automate ticket creation and applied <strong>SLA rules</strong> (e.g., 30-min response time for <strong>high-priority issues</strong>).</li></ul>",
     company: "IT SUPPORT",
     githubAvailable: "yes",
-    githubUrl: "https://github.com/Kevinnra/ActiveDirectory_HomeLab/blob/main/LabGuide.md"
+    githubUrl: "https://github.com/Kevinnra/ActiveDirectory_HomeLab"
   },
   "Python-Automation-Scripts": {
     title: "Python Automation Scripts for Active Directory & Helpdesk Workflows",
@@ -13,7 +13,7 @@ const projects = {
     description:"<h2>Key Features</h2><ul><li> Wrote <strong>Python</strong> scripts to automate ticket creation in <strong>Freshdesk</strong> via its <strong>REST API</strong>, simulating real-world <strong>ITSM</strong> scenarios. </li><li> Developed a ticket categorization tool (e.g., prioritizes tickets based on keywords like '<strong>outage</strong>' or '<strong>password</strong>').</li><li> Used <strong>requests</strong> and <strong>JSON</strong> manipulation to build, send, and validate API payloads, mimicking enterprise automation workflows.</li></ul>",
     company: "IT SUPPORT",
     githubAvailable: "no",
-    githubUrl: ""
+    githubUrl: "https://github.com/Kevinnra/ActiveDirectory_HomeLab/blob/main/Scripts/Freshdesk-Integration/FreshdeskAPI.py"
   },
   "aws-portfolio-hosting": {
     title: "Personal Portfolio Hosting on AWS S3 & Route 53",
