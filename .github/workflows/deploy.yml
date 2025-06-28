@@ -23,8 +23,16 @@ jobs:
       run: |
         aws s3 sync . s3://statict-site-s3 --delete
 
-    - name: Invalidate CloudFront cache
+    - name: Check if index.html was modified
+      id: check_index
+      run: |
+        git fetch origin main
+        CHANGED=$(git diff --name-only HEAD^ HEAD | grep -c "index.html" || true)
+        echo "changed=$CHANGED" >> $GITHUB_OUTPUT
+
+    - name: Invalidate CloudFront if index.html changed
+      if: steps.check_index.outputs.changed != '0'
       run: |
         aws cloudfront create-invalidation \
-        --distribution-id E3N2MQM5NE0OW2 \
-        --paths "/index.html"
+          --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
+          --paths "/index.html"
