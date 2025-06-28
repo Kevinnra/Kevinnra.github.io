@@ -26,13 +26,14 @@ jobs:
     - name: Check if index.html was modified
       id: check_index
       run: |
-        git fetch origin main
-        CHANGED=$(git diff --name-only HEAD^ HEAD | grep -c "index.html" || true)
+        echo "Checking if index.html was modified..."
+        CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -c "^index.html$" || true)
         echo "changed=$CHANGED" >> $GITHUB_OUTPUT
 
     - name: Invalidate CloudFront if index.html changed
       if: steps.check_index.outputs.changed != '0'
       run: |
+        echo "index.html was changed, invalidating CloudFront..."
         aws cloudfront create-invalidation \
           --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
           --paths "/index.html"
