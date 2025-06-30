@@ -17,7 +17,7 @@ const projects = {
   },
   "aws-portfolio-hosting": {
     title: "Personal Portfolio Hosting on AWS S3 & Route 53",
-    image: "/Resources/images/aws.jpeg",
+    image: "/Resources/images/Architecture-Diagram-AWS.png",
     description: "<h2>Intended Features</h2><ul><li> Hosted a <strong>static portfolio website</strong> (HTML, CSS, JavaScript) on <strong>AWS S3</strong> for highly available, low-cost web hosting.</li><li> Configured a <strong>custom domain</strong> using <strong>Route 53</strong> and set up DNS records for global access.</li><li> Secured the site with <strong>HTTPS</strong> by integrating <strong>CloudFront</strong> as a CDN and attaching an <strong>SSL certificate</strong> from AWS Certificate Manager.</li><li> Implemented <strong>bucket policies</strong> to restrict access and <strong>prevent public file overwrites</strong>.</li><li> Enabled <strong>versioning</strong> and <strong>lifecycle policies</strong> to manage and optimize S3 storage over time.</li><li> Documented the deployment process in a <strong>README</strong> and created a GitHub repo for future CI/CD integration.</li></ul>",
     company: "AWS CLOUD PROJECT",
     githubAvailable: "no",
