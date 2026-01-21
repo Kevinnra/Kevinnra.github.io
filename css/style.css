@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root{
   --primary-color: #11121a;
@@ -9,22 +11,23 @@
   --bold-color:#d66a12ea;
   --text-color: #c9c9c9;
   --t-color: #e3e717ea;
+  --transparent-color: rgba(255, 255, 255, 0.05);
   --fullwhite: #ffffff;
   --Poppins: "Poppins", "Segoe UI", sans-serif;
   --Code-pro: "Source Code Pro", monospace;
   --Changa: "Changa One", italic;
+  --Kanit: "Kanit", sans-serif;
 }
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* text-decoration: none; */
+
 }
+
 html{
   font-family: var(--Poppins);
   color: var(--text-color);
-  background-color: var(--primary-color);
-  scroll-padding-top: 50px;
 }
 
 main{
@@ -35,64 +38,80 @@ main p{
   margin-top: .35em;
 }
 
+/* hides kevinn ramirez logo when screen is desktop size */
+.logo-for-mobile{
+  display: none;
+}
+
+/* hides equis X logo container in desktop size */
+.X-button-container{
+  display: none;
+}
 
 nav{
-  background-color: var(--primary-color);
-  border-bottom: none;
-  border-bottom: 1px solid var(--hover-color);
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
-}
-
-nav ul{
-  list-style: none;
+  padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(09, 10, 21, 0.3);
+  backdrop-filter: blur(7px);
+  border-bottom: none; 
 }
 
-nav .home-li{
-  margin-right: auto;
-  font-weight:bolder;
+.logo {
+  font-family: var(--Kanit);
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: -0.5px;
 }
-nav li{
+
+
+/* navigation links */
+nav ul{
   display: flex;
+  list-style: none;
 }
+
 nav a{
   display: flex;
-  font-family: var(--Code-pro);
+  font-family: var(--Kanit);
   font-optical-sizing: auto;
-  font-weight: lighter;
+  font-weight: 200;
   text-decoration: none;
   color: var(--text-color);
   padding: 1em 2em;
-  transition: background-color 150ms ease;
 }
 
 nav a:hover{
-  transition: background-color 0.4s ease;
-  background-color: var(--hover-color);
+  transition: all 0.4s ease;
   color: var(--fullwhite);
   font-weight: bold;
 }
 
-nav a.active-link{
-  border-bottom: 2px solid var(--text-color);
-  color: var(--fullwhite);
+.logo a{
+  padding: 0;
+  font-weight: 600;
 }
 
+.logo a:hover{
+  font-weight: 600;
+}
+
+/* download resume link */
 nav a.accent-link{
-  font-weight:500;
-  background-color: var(--accent-color);
-  /* border-radius: 6px; */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 nav a.accent-link:hover{
-  transition: background-color 0.4s ease;
-  background-color: var(--hover-color);
-  color: var(--fullwhite);
-  font-weight: bolder;
+  transform: translateY(-3px);
+  background-color: var(--accent-color);
+  font-weight: 200;
 }
 
 body {
@@ -100,15 +119,60 @@ body {
   padding: 0;
   line-height: 1.6;
   background: var(--primary-color);
+  color: var(--text-color);
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='25' height='13' patternTransform='scale(4) rotate(70)'><rect x='0' y='0' width='100%' height='100%' fill='%23090a15ff'/><path d='M15.044 22.25a2.5 2.5 0 01-2.5 2.5 2.5 2.5 0 01-2.5-2.5 2.5 2.5 0 012.5-2.5 2.5 2.5 0 012.5 2.5m2.5 0a5 5 0 01-5 5 5 5 0 01-5-5 5 5 0 015-5 5 5 0 015 5m2.5 0a7.5 7.5 0 01-7.5 7.5 7.5 7.5 0 01-7.5-7.5 7.5 7.5 0 017.5-7.5 7.5 7.5 0 017.5 7.5m2.5 0a10 10 0 01-10 10 10 10 0 01-10-10 10 10 0 0110-10 10 10 0 0110 10m2.5 0a12.5 12.5 0 01-12.5 12.5 12.5 12.5 0 01-12.5-12.5 12.5 12.5 0 0112.5-12.5 12.5 12.5 0 0112.5 12.5m0-9a2.5 2.5 0 00-2.363 1.688 12.5 12.5 0 011.672 3.212 12.5 12.5 0 010 .002 2.5 2.5 0 00.69.098 2.5 2.5 0 002.5-2.5 2.5 2.5 0 00-2.5-2.5zm0-2.5a5 5 0 00-4.143 2.203 12.5 12.5 0 014.053 7.795 5 5 0 00.09.002 5 5 0 005-5 5 5 0 00-5-5zm-.037-2.5a7.5 7.5 0 00-6.125 3.227 12.5 12.5 0 016.162 10.773 12.5 12.5 0 01-.041 1 7.5 7.5 0 00.04 0 7.5 7.5 0 007.5-7.5 7.5 7.5 0 00-7.5-7.5 7.5 7.5 0 00-.036 0zm.017-2.5a10 10 0 00-8.441 4.672 12.5 12.5 0 018.46 11.828 12.5 12.5 0 01-.495 3.488 10 10 0 00.496.012 10 10 0 0010-10 10 10 0 00-10-10 10 10 0 00-.02 0zm.006-2.5a12.5 12.5 0 00-10.998 6.588 12.5 12.5 0 01.29.039 12.5 12.5 0 01.005 0 12.5 12.5 0 01.29.045 12.5 12.5 0 01.003 0 12.5 12.5 0 01.58.113 12.5 12.5 0 01.004 0 12.5 12.5 0 011.123.3 12.5 12.5 0 01.02.007 12.5 12.5 0 01.006.002 12.5 12.5 0 01.277.093 12.5 12.5 0 01.8.31 12.5 12.5 0 01.032.01 12.5 12.5 0 01.033.016 12.5 12.5 0 01.492.223 12.5 12.5 0 01.016.008 12.5 12.5 0 01.004.002 12.5 12.5 0 01.523.271 12.5 12.5 0 01.006.002 12.5 12.5 0 01.254.143 12.5 12.5 0 01.004.002 12.5 12.5 0 01.252.15 12.5 12.5 0 01.004.002 12.5 12.5 0 01.248.156 12.5 12.5 0 01.004.002 12.5 12.5 0 01.244.16 12.5 12.5 0 01.004.002 12.5 12.5 0 01.24.168 12.5 12.5 0 01.004.002 12.5 12.5 0 01.236.174 12.5 12.5 0 01.004.002 12.5 12.5 0 01.233.18 12.5 12.5 0 01.004.002 12.5 12.5 0 01.228.183 12.5 12.5 0 01.004.002 12.5 12.5 0 01.223.19 12.5 12.5 0 01.004.002 12.5 12.5 0 01.218.195 12.5 12.5 0 01.032.03 12.5 12.5 0 01.185.173 12.5 12.5 0 01.004.002 12.5 12.5 0 01.209.205 12.5 12.5 0 01.004.004 12.5 12.5 0 01.205.21 12.5 12.5 0 01.002.001 12.5 12.5 0 01.2.215 12.5 12.5 0 01.003.004 12.5 12.5 0 01.193.219 12.5 12.5 0 01.004.003 12.5 12.5 0 01.19.223 12.5 12.5 0 01.004.004 12.5 12.5 0 01.363.463 12.5 12.5 0 01.004.004 12.5 12.5 0 01.172.236 12.5 12.5 0 01.004.004 12.5 12.5 0 01.166.24 12.5 12.5 0 01.002.004 12.5 12.5 0 01.162.244 12.5 12.5 0 01.002.004 12.5 12.5 0 01.156.248 12.5 12.5 0 01.03.05 12.5 12.5 0 01.251.437 12.5 12.5 0 01.016.029 12.5 12.5 0 01.01.02 12.5 12.5 0 01.263.507 12.5 12.5 0 01.002.004 12.5 12.5 0 01.125.266 12.5 12.5 0 01.002.004 12.5 12.5 0 01.118.267 12.5 12.5 0 01.002.004 12.5 12.5 0 01.113.272 12.5 12.5 0 01.002.004 12.5 12.5 0 01.105.273 12.5 12.5 0 01.002.004 12.5 12.5 0 01.098.275 12.5 12.5 0 01.002.004 12.5 12.5 0 01.092.278 12.5 12.5 0 01.002.003 12.5 12.5 0 01.086.282 12.5 12.5 0 01.002.004 12.5 12.5 0 01.078.28 12.5 12.5 0 01.002.005 12.5 12.5 0 01.072.285 12.5 12.5 0 01.002.004 12.5 12.5 0 01.067.285 12.5 12.5 0 01.023.121 12.5 12.5 0 01.035.17 12.5 12.5 0 01.086.496 12.5 12.5 0 01.014.09 12.5 12.5 0 010 .004 12.5 12.5 0 01.039.29 12.5 12.5 0 01.008.075 12.5 12.5 0 01.045.467 12.5 12.5 0 01.003.05 12.5 12.5 0 01.002.04 12.5 12.5 0 01.028.535 12.5 12.5 0 010 .02 12.5 12.5 0 010 .003 12.5 12.5 0 01.004.293 12.5 12.5 0 010 .014 12.5 12.5 0 01-.127 1.777 12.5 12.5 0 01-.1.586 12.5 12.5 0 01-.058.291 12.5 12.5 0 010 .002 12.5 12.5 0 01-.141.576 12.5 12.5 0 01-.08.287 12.5 12.5 0 01-.182.567 12.5 12.5 0 01-.207.557 12.5 12.5 0 01-.234.546 12.5 12.5 0 01-.26.536 12.5 12.5 0 01-.1.187 12.5 12.5 0 001.488.088 12.5 12.5 0 0012.5-12.5 12.5 12.5 0 00-12.5-12.5 12.5 12.5 0 00-.014 0zm-24.986 10a2.5 2.5 0 00-2.5 2.5 2.5 2.5 0 002.5 2.5 2.5 2.5 0 00.691-.098 12.5 12.5 0 011.672-3.214A2.5 2.5 0 00.044 13.25zm0-2.5a5 5 0 00-5 5 5 5 0 005 5 5 5 0 00.09-.002 12.5 12.5 0 014.054-7.795A5 5 0 00.044 10.75zm-.037-2.5a7.5 7.5 0 00-7.463 7.5 7.5 7.5 0 007.5 7.5 7.5 7.5 0 00.041 0 12.5 12.5 0 01-.041-1 12.5 12.5 0 016.162-10.773A7.5 7.5 0 00.044 8.25a7.5 7.5 0 00-.037 0zm.017-2.5a10 10 0 00-9.98 10 10 10 0 0010 10 10 10 0 00.498-.014 12.5 12.5 0 01-.498-3.486 12.5 12.5 0 018.46-11.828A10 10 0 00.045 5.75a10 10 0 00-.02 0zm-.082-2.5a12.5 12.5 0 00-12.486 12.5 12.5 12.5 0 0012.5 12.5 12.5 12.5 0 001.57-.1 12.5 12.5 0 01-1.482-5.9 12.5 12.5 0 0110.93-12.4A12.5 12.5 0 00-.044 3.25a12.5 12.5 0 00-.014 0zm12.602 3.5a2.5 2.5 0 00-2.39 1.773 12.5 12.5 0 01.82 1.327 12.5 12.5 0 011.57-.1 12.5 12.5 0 011.488.088 12.5 12.5 0 01.875-1.399 2.5 2.5 0 00-2.363-1.689zm0-2.5a5 5 0 00-4.178 2.256 12.5 12.5 0 012.608 3.344 12.5 12.5 0 011.57-.1 12.5 12.5 0 011.488.088 12.5 12.5 0 012.658-3.383 5 5 0 00-4.146-2.205zm-.037-2.5a7.5 7.5 0 00-6.15 3.266 12.5 12.5 0 014.617 4.834 12.5 12.5 0 011.57-.1 12.5 12.5 0 011.488.088 12.5 12.5 0 014.676-4.861 7.5 7.5 0 00-6.164-3.227 7.5 7.5 0 00-.037 0zm5.226 9.129a12.5 12.5 0 01.254.117 12.5 12.5 0 00-.254-.117zM12.524-.75a10 10 0 00-8.457 4.695 12.5 12.5 0 016.907 5.905 12.5 12.5 0 011.57-.1 12.5 12.5 0 011.488.088 12.5 12.5 0 016.973-5.916A10 10 0 0012.544-.75a10 10 0 00-.02 0zm5.21 11.629a12.5 12.5 0 01.253.117 12.5 12.5 0 00-.254-.117zM12.53-3.25a12.5 12.5 0 00-11.004 6.6 12.5 12.5 0 019.448 6.5 12.5 12.5 0 011.57-.1 12.5 12.5 0 011.488.088 12.5 12.5 0 019.526-6.498 12.5 12.5 0 00-11.014-6.59 12.5 12.5 0 00-.014 0zm5.203 14.129a12.5 12.5 0 01.254.117 12.5 12.5 0 00-.254-.117zM25.043.25a2.5 2.5 0 00-2.362 1.688 12.5 12.5 0 01.877 1.4 12.5 12.5 0 011.472-.088 12.5 12.5 0 01.014 0 12.5 12.5 0 012.389.23 2.5 2.5 0 00.11-.73 2.5 2.5 0 00-2.5-2.5zm0-2.5A5 5 0 0020.9-.047a12.5 12.5 0 012.659 3.385 12.5 12.5 0 011.472-.088 12.5 12.5 0 01.014 0 12.5 12.5 0 014.783.953 5 5 0 00.217-1.453 5 5 0 00-5-5zm-.036-2.5a7.5 7.5 0 00-6.125 3.227 12.5 12.5 0 014.676 4.86 12.5 12.5 0 011.472-.087 12.5 12.5 0 01.014 0 12.5 12.5 0 017.014 2.152 7.5 7.5 0 00.486-2.652 7.5 7.5 0 00-7.5-7.5 7.5 7.5 0 00-.037 0zm.017-2.5a10 10 0 00-8.441 4.672 12.5 12.5 0 016.975 5.916 12.5 12.5 0 011.472-.088 12.5 12.5 0 01.014 0 12.5 12.5 0 019.01 3.838 10 10 0 00.99-4.338 10 10 0 00-10-10 10 10 0 00-.02 0zm.006-2.5a12.5 12.5 0 00-10.998 6.59 12.5 12.5 0 019.526 6.498 12.5 12.5 0 011.472-.088 12.5 12.5 0 01.014 0 12.5 12.5 0 0110.678 6 12.5 12.5 0 001.822-6.5 12.5 12.5 0 00-12.5-12.5 12.5 12.5 0 00-.014 0zM14.69 8.75a12.5 12.5 0 00-.128.197 12.5 12.5 0 01.128-.197zm3.043 2.129a12.5 12.5 0 01.254.117 12.5 12.5 0 00-.254-.117zM.043.25a2.5 2.5 0 00-2.5 2.5 2.5 2.5 0 00.106.717A12.5 12.5 0 01-.058 3.25a12.5 12.5 0 01.014 0 12.5 12.5 0 011.57.1 12.5 12.5 0 01.881-1.41A2.5 2.5 0 00.044.25zm0-2.5a5 5 0 00-5 5 5 5 0 00.208 1.42 12.5 12.5 0 014.691-.92 12.5 12.5 0 01.014 0 12.5 12.5 0 011.57.1A12.5 12.5 0 014.19-.045 5 5 0 00.044-2.25zm-.036-2.5a7.5 7.5 0 00-7.463 7.5 7.5 7.5 0 00.469 2.605A12.5 12.5 0 01-.057 3.25a12.5 12.5 0 01.013 0 12.5 12.5 0 011.57.1 12.5 12.5 0 014.682-4.873A7.5 7.5 0 00.044-4.75a7.5 7.5 0 00-.037 0zm.017-2.5a10 10 0 00-9.98 10 10 10 0 00.96 4.275A12.5 12.5 0 01-.057 3.25a12.5 12.5 0 01.014 0 12.5 12.5 0 011.57.1 12.5 12.5 0 016.979-5.928A10 10 0 00.044-7.25a10 10 0 00-.02 0zm.006-2.5a12.5 12.5 0 00-12.486 12.5 12.5 12.5 0 001.78 6.428A12.5 12.5 0 01-.059 3.25a12.5 12.5 0 01.014 0 12.5 12.5 0 011.57.1 12.5 12.5 0 019.532-6.51A12.5 12.5 0 00.044-9.75a12.5 12.5 0 00-.014 0zM9.722 7.951a12.5 12.5 0 01.12.154 12.5 12.5 0 00-.12-.154z'  stroke-width='1' stroke='%23000000ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-44,-4)' fill='url(%23a)'/></svg>")
 }
 
+/* hero Section or header */
+header{
+  margin-top: 4rem;
+  color: var(--text-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+header h1{
+  margin-bottom: 1.5em;
+  
+}
+.titles{
+  font-family: var(--Code-pro);
+  font-size: small;
+  margin-top: 4rem;
+  margin-bottom: 1em;
+}
+
+/* view my work - GEt in touch buttons */
+.hero-buttons{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.btn {
+  padding: 1rem 2.5rem;
+  background: var(--transparent-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn:hover{
+  transition: all 0.4s ease;
+  transform: translateY(-3px);
+  background-color: var(--accent-color);
+}
+header{
+  scroll-margin-top: 60px;
+}
 section {
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding: 40px 10px;
-  max-width: 950px;
+  padding: 2% 7%;
+  max-width: 95%;
   margin: auto;
+  scroll-margin-top: 60px;
 } 
 .section-divider {
   display: flex;
@@ -123,101 +187,151 @@ section {
   flex: 1;
 }
 
-
-/* header  content*/
-header{
-  margin-top: 60px;
-  color: var(--text-color);
-  padding: 40px 20px;
-  text-align: center;
-}
-header h1{
-  margin-bottom: 1.5em;
-  
-}
-.titles{
-  font-family: var(--Code-pro);
-  font-size: small;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-/* contact me resume button */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: var(--hover-color);
-  color: var(--text-color);
-  text-decoration: none;
-  border-radius: 4px;
-
-}
-.btn:hover{
-  background: var(--accent-color);
+/* About Me section */
+.about-me-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-/* who am I */
-.text-aboutme{
+p.text-aboutme{
+  align-self: center;
   padding: 1.5em;
   text-align: center;
+  font-size: 1.1rem;
   font-weight: lighter;
+  max-width: 870px;
 }
 strong{
   color:var(--bold-color);
 }
+.about-image {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, #1f2f76 0%, #2d1c3e 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+}
+
+.section-description {
+  font-size: 1.1rem;
+  font-weight: lighter;
+}
+
+/* skills section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 15px;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+}
+
 /* projects */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  /* gap: 1%; */
 }
-
-
 .project-card {
-  padding: 20px;
-  background: var(--hover-color);
-  width: 100%;
-  max-width: 400px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgb(0, 0, 0);
-  margin: 1em auto;
-  color: var(--text-color);
-  font-family: var(--Poppins);
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card-header {
-  position: relative;
-  z-index: 1;
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #1f2f76 0%, #2d1c3e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-link:hover {
+  text-decoration: underline;
 }
 
 .card-image {
-  width: 100%;
+  padding: 0.5rem;
+  width: 95%;
   height: auto;
   display: block;
-  
-}
-
-.card-title {
-  position: absolute;
-  width: 100%;
-  bottom: 7px;
-  padding: 1em;
-  color: var(--fullwhite);
-  background: #000000b9;
-}
-
-.card-title h3 {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: bold;
-  line-height: 1.2;
+  margin: 0 auto;
+  border-radius: 20px;
+  max-block-size: 5em;
 }
 
 .project-badge {
   display: inline-block;
-  margin-top: 0.5em;
-  background-color: var(--t-color);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: var(--primary-color);
   font-weight: lighter;
   padding: 0.2em 0.6em;
@@ -234,32 +348,6 @@ strong{
   font-family: var(--Code-pro);
   margin-bottom: 0.7em;
 }
-.card-body li{
-  font-family: var(--Code-pro);
-  margin-bottom: 2em;
-}
-.read-more-link {
-  color: var(--bold-color);
-  font-weight: bold;
-  text-decoration: none;
-  margin-left: 0.5em;
-}
-
-.read-more-link:hover {
-  transition: color 0.4s ease;
-  color: var(--t-color);
-  text-decoration: underline;
-}
-
-.card-footer {
-  padding: 0.8em 1em;
-  font-weight: lighter;
-  color: #149b67;
-}
-
-.company-name {
-  font-weight: 700;
-}
 
 
 /* certifications*/
@@ -274,19 +362,22 @@ strong{
   font-size: smaller;
   text-align:center;
 }
-img{
-  height: auto;
-  width: 200px;
-}
-#squared-image{
-  height: 130px;
-  width: 120px;
-}
+
 .image-box{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
+}
+
+.image-box:hover{
+  transform: translateY(-5px);
+  transition: transform 0.4s;
+}
+
+.image-box img{
+  height: auto;
+  width: 200px;
 }
 
 .cert-code{
@@ -311,40 +402,39 @@ img{
 
 
 /* contact section */
-#contact{
-  min-height: 400px;display: flex;
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.contact-link {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--text-light);
+  transition: all 0.3s;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.contact-link:hover {
+  background: var(--accent-color);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+}
 
 footer {
   display: block;
-  background: var(--hover-color);
-  color: var(--text-color);
+  color: var(--hover-color);
+  background-color: black;
   text-align: center;
-  padding: 20px;
+  padding: 1.5rem;
+  margin-top:5rem;
 }
 
-#home-logo-container{
-  padding: 0;
-  margin: 0;
-}
-
-#home-logo{
-  height: 45px;
-  width: 45px;
-  padding: 0.3em;
-  margin-left: 20px;
-  margin-top: 5px;
-  margin-right: auto;
-  /* border: solid 1px pink; */
-  fill: var(--fullwhite);
-  display: none;
-  cursor: pointer;
-  border-bottom: solid 2px var(--text-color);
-  
-
-}
 #open-sidebar-button{
   position: fixed;
   top: 0;
@@ -375,220 +465,146 @@ footer {
   display: none;
 }
 
-/* mobile styles */
-@media screen and (max-width: 809px){
+/* mobile styles ##############################################*/
+@media screen and (max-width: 882px){
   #open-sidebar-button, #close-sidebar-button{
     display: block;
   }
 
-  #topbar-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: var(--primary-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    z-index: 10;
-    border-bottom: 1px solid var(--hover-color);
-    
-  }
-  .home-link-topbar {
-    font-family: var(--Code-pro);
-    color: var(--fullwhite);
-    text-decoration: none;
-    font-size: 1.1em;
-    
-  }
-  #open-sidebar-button svg{
-  width: 40px;
-  height: 40px;
-  display: block;
-  margin-left: auto;
-  padding-bottom: 0.5em;
-  /* border: solid 1px pink; */
-  }
+  /* nav container */
   nav{
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     right: -100%;
-    /* 100dvh ?? */
+    background: rgba(10, 10, 10, 0.2);
+    backdrop-filter: blur(5px);
     height: 100vh;
+    width: 100%;
     width: min(15em, 100%);
     z-index: 10;
     border-left: 1px solid var(--hover-color);
     transition: right 300ms ease-out;
+    justify-content: flex-start;
   }
+  /* nav list items */
+  nav ul{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+  nav ul > :first-child {
+  align-self: flex-end; /* push only first item to the right */
+  }
+  .accent-link {
+    background-color: var(--accent-color);
+    text-align: center;
+  }
+
+  /* kr container logo for mobile */
+  #topbar-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 1rem 3rem;
+    z-index: 10;
+    background: rgba(10, 10, 10, 0.2);
+    backdrop-filter: blur(5px);
+  }
+
+  /* hide KR name logo for desktop from burger menu */
+  .logo{
+    display: none;
+  }
+
+  /* show kevinn ramirez name for mobile logo*/
+  .logo-for-mobile{
+    display: block;
+    font-family: var(--Kanit);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.4em;
+  }
+  
+  #topbar-menu button{
+    background: rgba(10, 10, 10, 0);
+    margin-top: 0.6em;
+  }
+
+  .btn {
+    border: solid 1px var(--accent-color);
+  }
+
+  .about-me-content {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  #open-sidebar-button svg{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-left: auto;
+    padding-bottom: 0.5em;
+  }
+
+  .X-button-container{
+    display: block;
+    margin-right: 0;
+  }
+
+  #close-sidebar-button svg{
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  /* open movement */
   nav.show{
     right: 0;
   }
   nav.show ~ #overlay{
     display: block;
   }
-  nav ul{
-  width: 100%;
-  flex-direction: column;
-  }
-  nav a{
-    width: 100%;
-    padding-left: 2.5em;
-  }
-  /* nav a.active-link{
-    border-bottom: none;
-  } */
-  nav .home-li{
-    display: none;
-    /* margin-right: unset; */
-  }
-  header {
-  margin-top: 30px;
-}
-  .btn {
-    background-color: var(--accent-color);
+
+  .contact-link {
+  min-width: 150px;
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 210px;
+  border: 1px solid var(--accent-color);
   }
 } 
 
-/* Ipad and  small displays styles but bigger than mobile */
-@media screen and (max-width: 1240px) and (min-width: 810px) {
+/* Ipad and  small displays styles but bigger than mobile #########*/
+@media screen and (max-width: 1240px) and (min-width: 814px) {
   
-  nav{
-    padding: 0;
-    margin: 0;
-  }
-
-  nav ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    
-  }
-
   nav a {
     font-size: 0.9em;
-    padding: 0.8em 1em;
+    font-weight: 300;
   }
-  #home-logo{
-    display: block;
-    margin-right: auto;
-  }
-
-  nav .home-li {
-    display: none;
-  }
-
   .btn {
-    background-color: var(--accent-color);
+    border: solid 1px var(--accent-color);
   }
-
-  .home-link-topbar{
-    display: none;
+  .about-me-content {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-
+  .contact-link {
+    border: 1px solid var(--accent-color);
+  }
 }
 
 
 
-/* gmail and github */
-.socials-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  margin-right: 50px;
-  display: flex;
-  gap: 50px;
-  
-}
-.socials-container a{
-  background-color: var(--text-color);
-  padding: 1em;
-  border-radius: 50%;
-  height: 64px;
-  width: 64px;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  place-items: center;
-  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.05);
-}
-.socials-container a svg{
-  height: 32px;
-}
-.socials-container a::before{
-  content: attr(data-social);
-  position: absolute;
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  border-radius: 100px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  transform: translateY(-40px) translateX(-25px) rotate(25deg);
-  opacity: 0;
-  transition: 400ms cubic-bezier(.42,0,.44,1.68);
-  
-}
-
-.socials-container a:hover{
-  transition: background-color 0.3s ease;
-  background-color: var(--accent-color);
-  fill: var(--fullwhite);
-}
-
-.socials-container a::after{
-  content: '';
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 10px solid var(--accent-color);
-  transform: translateY(-28px) translateX(-25px);
-  opacity: 0;
-  transition: 300ms cubic-bezier(.42,0,.44,1.68);
-}
-/* hover */
-.socials-container a:hover::before{
-  transform: translateY(-65px) translateX(-25px) rotate(0);
-  opacity: 1;
-}
-.socials-container a:hover::after{
-  transform: translateY(-28px) translateX(-25px) rotate(0);
-  opacity: 1;
-}
-
-/* animate on scroll */
-.socials-container.scroll-animate a::before {
-  transition: opacity 0.9s;
-  transform: translateY(-65px) translateX(-25px) rotate(0deg);
-  opacity: 1;
-}
-
-.socials-container.scroll-animate a::after {
-  transition: opacity 0.9s;
-  transform: translateY(-28px) translateX(-25px) rotate(0);
-  opacity: 1;
-}
-.socials-container.scroll-animate a {
-  transition: background-color 0.3s ease;
-  transition: fill 1s ease;
-  background-color: var(--accent-color);
-  fill: var(--fullwhite);
-}
-.socials-container.scroll-animate a:hover::before{
-  transform: translateY(-65px) translateX(-25px) rotate(0);
-  opacity: 1;
-}
-.socials-container.scroll-animate a:hover::after{
-  transform: translateY(-28px) translateX(-25px) rotate(0);
-  opacity: 1;
-}
-
-
-
-
-/* projects page */
+/* projects page /////////////////////////////////////////*/
 .return-button {
   display: inline-block;
   margin-top: 5em;
