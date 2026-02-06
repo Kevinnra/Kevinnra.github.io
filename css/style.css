@@ -232,14 +232,14 @@ body {
 /* skills section */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
   margin-top: 3rem;
 }
 .skill-card {
   border: 1px solid var(--transparent-color-line);
   background: var(--hover-color);
-  padding: 1.5rem;
+  padding: 1.5rem 0.5rem 0 0.5rem;
   border-radius: 15px;
   transition: all 0.3s;
 }
@@ -258,7 +258,7 @@ body {
 }
 
 .skill-card p {
-  padding: 1.5rem 0.5rem;
+  padding: 1.5rem;
   color: var(--text-gray);
   font-size: 0.95rem;
 }
