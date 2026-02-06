@@ -3,78 +3,211 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project - Kevinn Ramirez</title>
+  <title id="page-title">Project - Kevinn Ramirez</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/projects/project-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <div id="topbar-menu">
-    <a href="#header" class="logo-for-mobile">KEVINN RAMIREZ</a>
-    <button 
-    id="open-sidebar-button" 
-    onclick="openSidebar()" 
-    aria-label="open sidebar" 
-    aria-expanded="false" 
-    aria-controls="navbar">
-      <svg viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffff" style="--darkreader-inline-stroke: var(--darkreader-text-ffffff, #e8e6e3);"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffffCCCCCC" stroke-width="0.336" style="--darkreader-inline-stroke: var(--darkreader-text-ffcccccc, rgba(255, 168, 168, 0.8));"></g><g id="SVGRepo_iconCarrier"> <path d="M19 12.75H5C4.80109 12.75 4.61032 12.671 4.46967 12.5303C4.32902 12.3897 4.25 12.1989 4.25 12C4.25 11.8011 4.32902 11.6103 4.46967 11.4697C4.61032 11.329 4.80109 11.25 5 11.25H19C19.1989 11.25 19.3897 11.329 19.5303 11.4697C19.671 11.6103 19.75 11.8011 19.75 12C19.75 12.1989 19.671 12.3897 19.5303 12.5303C19.3897 12.671 19.1989 12.75 19 12.75Z" fill="#ffffff" style="--darkreader-inline-fill: var(--darkreader-background-ffffff, #181a1b);" data-darkreader-inline-fill=""></path> <path d="M19 8.25H5C4.80109 8.25 4.61032 8.17098 4.46967 8.03033C4.32902 7.88968 4.25 7.69891 4.25 7.5C4.25 7.30109 4.32902 7.11032 4.46967 6.96967C4.61032 6.82902 4.80109 6.75 5 6.75H19C19.1989 6.75 19.3897 6.82902 19.5303 6.96967C19.671 7.11032 19.75 7.30109 19.75 7.5C19.75 7.69891 19.671 7.88968 19.5303 8.03033C19.3897 8.17098 19.1989 8.25 19 8.25Z" fill="#ffffff" style="--darkreader-inline-fill: var(--darkreader-background-ffffff, #181a1b);" data-darkreader-inline-fill=""></path> <path d="M19 17.25H5C4.80109 17.25 4.61032 17.171 4.46967 17.0303C4.32902 16.8897 4.25 16.6989 4.25 16.5C4.25 16.3011 4.32902 16.1103 4.46967 15.9697C4.61032 15.829 4.80109 15.75 5 15.75H19C19.1989 15.75 19.3897 15.829 19.5303 15.9697C19.671 16.1103 19.75 16.3011 19.75 16.5C19.75 16.6989 19.671 16.8897 19.5303 17.0303C19.3897 17.171 19.1989 17.25 19 17.25Z" fill="#ffffff" style="--darkreader-inline-fill: var(--darkreader-background-ffffff, #181a1b);" data-darkreader-inline-fill=""></path> </g></svg>
-    </button>
-  </div>
-  <nav id="navbar">
-    <div class="logo">
-      <a href="#header">KEVINN RAMIREZ</a>
-      <a href="index.html#projects" class="back-button">← Back to Projects</a>
-    </div>   
-  </nav>
-  <!-- <nav id="navbar">
-    <ul>
-      <li>
-        <a id="home-logo-container" aria-current="page" href="../index.html#header">
-          <svg  id="home-logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50"><path d="M 34.427734 4.8496094 L 33.810547 4.96875 L 21.810547 7.2773438 L 21.646484 7.3105469 L 21.5 7.3945312 L 3.5 17.783203 L 3 18.072266 L 3 18.650391 L 3 20.960938 L 3 22.171875 L 4.1894531 21.941406 L 6 21.591797 L 6 34.240234 L 6 34.818359 L 6.5 35.107422 L 9.5 36.837891 L 10.001953 37.126953 L 10.501953 36.835938 L 12 35.966797 L 13 36.546875 L 13 38.279297 L 13 38.857422 L 13.5 39.146484 L 24.5 45.496094 L 25 45.785156 L 25.5 45.496094 L 43.5 35.105469 L 44 34.816406 L 44 34.240234 L 44 26.728516 L 46.5 25.287109 L 47 24.998047 L 47 24.419922 L 47 22.109375 L 47 21.779297 L 46.802734 21.513672 L 34.802734 5.3535156 L 34.427734 4.8496094 z M 33.931641 6.2773438 L 45.630859 22.033203 L 28.068359 32.177734 L 16.367188 16.416016 L 33.931641 6.2773438 z M 32.59375 6.4746094 L 15.912109 16.101562 L 5.4140625 18.123047 L 22.087891 8.4980469 L 32.59375 6.4746094 z M 15.892578 16.615234 L 27.75 32.587891 L 27.75 34.056641 L 16.201172 18.5 A 0.250025 0.250025 0 0 0 16.007812 18.398438 A 0.250025 0.250025 0 0 0 15.953125 18.404297 L 6.96875 20.132812 L 6.953125 20.134766 L 4.25 20.658203 L 4.25 18.855469 L 15.892578 16.615234 z M 15.892578 18.923828 L 24.75 30.857422 L 24.75 44.197266 L 14.25 38.134766 L 14.25 35.970703 L 14.25 29.041016 A 0.250025 0.250025 0 0 0 14.125 28.824219 L 10.125 26.515625 A 0.250025 0.250025 0 0 0 9.9804688 26.482422 A 0.250025 0.250025 0 0 0 9.75 26.732422 L 9.75 35.537109 L 7.25 34.095703 L 7.25 20.585938 L 15.892578 18.923828 z M 45.75 22.542969 L 45.75 24.275391 L 42.875 25.933594 A 0.250025 0.250025 0 0 0 42.853516 25.947266 L 28.25 34.380859 L 28.25 32.650391 L 45.75 22.542969 z M 42.75 26.583984 L 42.75 34.095703 L 25.25 44.197266 L 25.25 31.53125 L 27.798828 34.964844 A 0.250025 0.250025 0 0 0 28.125 35.03125 L 42.75 26.583984 z M 10.25 27.166016 L 11.75 28.03125 L 11.75 34.666016 L 10.25 35.537109 L 10.25 27.166016 z M 16.980469 28.214844 A 0.250025 0.250025 0 0 0 16.75 28.464844 L 16.75 34.238281 A 0.250025 0.250025 0 0 0 16.875 34.455078 L 21.875 37.339844 A 0.250025 0.250025 0 0 0 22.25 37.123047 L 22.25 31.351562 A 0.250025 0.250025 0 0 0 22.125 31.134766 L 17.125 28.248047 A 0.250025 0.250025 0 0 0 16.980469 28.214844 z M 12.25 28.320312 L 13.75 29.185547 L 13.75 35.537109 L 12.25 34.666016 L 12.25 28.320312 z M 17.25 28.896484 L 18.75 29.763672 L 18.75 32.939453 L 17.25 33.804688 L 17.25 28.896484 z M 19.25 30.052734 L 21.75 31.496094 L 21.75 34.380859 L 19.25 32.939453 L 19.25 30.052734 z M 19 33.371094 L 21.75 34.958984 L 21.75 36.691406 L 17.5 34.238281 L 19 33.371094 z"></path></svg>
-        </a>
-      </li>
-      <li>
-        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar"><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0,0,256,256"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M20.36523,3.42383l-0.86523,0.5l-4,2.31055l-5,2.88867l-0.86523,0.5l0.5,0.86719l7.5,12.99219l-7.13281,4.11133l-0.86719,0.5l0.5,0.86719l4,6.92969l0.5,0.86523l0.86719,-0.5l7.13281,-4.11914l7.5,12.99414l0.5,0.86523l0.86719,-0.5l5,-2.89062l4,-2.30859l0.86523,-0.5l-0.5,-0.86719l-7.5,-12.98438l7.13477,-4.11914l0.86523,-0.5l-0.5,-0.86523l-4,-6.93164l-0.5,-0.86524l-0.86523,0.5l-7.13477,4.11914l-7.5,-12.99414zM19.9082,5.13086l7.75,13.42773l-3.56641,2.05859l-7.75,-13.42578zM15.9082,7.44141l7.875,13.64258c0.03311,0.05754 0.08775,0.09956 0.15186,0.11678c0.06412,0.01722 0.13245,0.00823 0.18993,-0.02498l3.98438,-2.30078c0.0053,-0.00242 0.01051,-0.00503 0.01563,-0.00781l3.7832,-2.18555l3.75195,6.49609l-3.78516,2.18555c-0.00739,0.00419 -0.01456,0.00875 -0.02148,0.01367l-3.97852,2.29297c-0.05754,0.03311 -0.09956,0.08775 -0.11678,0.15186c-0.01722,0.06412 -0.00823,0.13245 0.02498,0.18993l7.875,13.63672l-4.56641,2.64062l-7.875,-13.64453c-0.03311,-0.05754 -0.08775,-0.09956 -0.15186,-0.11678c-0.06412,-0.01722 -0.13245,-0.00823 -0.18993,0.02498l-7.7832,4.49609l-3.75,-6.49805l7.7832,-4.48437c0.05754,-0.03311 0.09956,-0.08775 0.11678,-0.15186c0.01722,-0.06412 0.00823,-0.13245 -0.02498,-0.18993l-7.875,-13.64258zM35.9082,14.37109l3.75,6.49805l-3.56445,2.05859l-3.75195,-6.49609zM31.9082,25.92188l7.75,13.41602l-3.56641,2.06055l-7.75,-13.41992z"></path></g></g></svg></button>
-      </li>
-      <li class="home-li"><a class="active-link" aria-current="page" href="../index.html#header">Kevinn Ramirez</a></li>
-      <li><a href="../index.html#about">Who am I</a></li>
-      <li><a href="../index.html#working-on">Projects</a></li>
-      <li><a href="../index.html#certifications">Certifications</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-      <li class="accent-link-container"><a class="accent-link" href="resume.html">Download Resume</a></li>
-    </ul>
-  </nav> -->
-  <!-- <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div> -->
-  
-  <div>
-      <a href="../index.html#projects" class="return-button">← Back to Projects</a>
-  </div>
-
-
-    <main id="project-content">
-    
-      <div class="section-divider">
-      <span class="line"></span>
-      <h1 id="project-title"></h1>
-      <span class="line"></span>
+  <!-- Simplified Navigation -->
+  <div class="sticky-nav-bread">
+    <nav class="project-nav">
+      <div class="project-logo-container">
+        <a href="/index.html" class="project-logo">KEVINN RAMIREZ</a>
       </div>
+      <a href="/index.html#projects" class="back-button">
+        <svg class="back-icon"  viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12.9998 8L6 14L12.9998 21" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: var(--darkreader-text-ffffff, #e8e6e3);" data-darkreader-inline-stroke=""></path> <path d="M6 14H28.9938C35.8768 14 41.7221 19.6204 41.9904 26.5C42.2739 33.7696 36.2671 40 28.9938 40H11.9984" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="--darkreader-inline-stroke: var(--darkreader-text-ffffff, #e8e6e3);" data-darkreader-inline-stroke=""></path> </g></svg>
+      </a>
+    </nav>
 
-        <div id="project-image-container" >
-          <img id="project-image" src="" alt="" />
-        </div>
-        <div id="project-description">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <a href="/index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="/index.html#projects">Projects</a>
+        <span class="separator">›</span>
+        <span id="breadcrumb-title" class="breadcrumb-title">Loading...</span>
+      </div>
+    </div>
+  </div>
+  
 
-        </div>
-        <div id="github-link-container">
-          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  
+
+  <!-- Hero Section -->
+  <header class="project-hero">
+    <div class="container">
+      <h1 id="project-title">Loading Project...</h1>
+      <p id="project-tagline" class="tagline"></p>
+      <div id="project-badges" class="tech-badges"></div>
+      <div class="hero-buttons">
+        <a id="github-link" href="#" target="_blank" class="btn btn-primary" style="display: none;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
           </svg>
-        </div>
-        
-    </main>
-    <footer>
-    <p>© 2025 Kevinn Ramirez. All rights reserved.</p>
-    </footer>
+          View on GitHub
+        </a>
+        <a id="demo-link" href="#" target="_blank" class="btn btn-secondary" style="display: none;">
+          View Live Demo
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <script src="projects.js"></script>
-    <script src="project-loader.js"></script>
+  <!-- Overview Section -->
+  <section class="project-section">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Overview</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h3>Problem Statement</h3>
+          <p id="overview-problem"></p>
+        </div>
+        <div class="overview-card">
+          <h3>Solution</h3>
+          <p id="overview-solution"></p>
+        </div>
+        <div class="overview-card">
+          <h3>Key Results</h3>
+          <ul id="overview-results" class="results-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section class="project-section architecture-section">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Architecture</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div class="architecture-content">
+        <div class="architecture-image-container">
+          <img id="architecture-image" src="" alt="Architecture Diagram" class="architecture-image" />
+        </div>
+        <p id="architecture-description" class="architecture-text"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Details Section (Optional) -->
+  <section id="technical-section" class="project-section" style="display: none;">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Technical Details</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="technical-grid" class="technical-grid"></div>
+    </div>
+  </section>
+
+  <!-- Key Features Section (Optional) -->
+  <section id="features-section" class="project-section" style="display: none;">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Key Features</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="features-grid" class="features-grid"></div>
+    </div>
+  </section>
+
+  <!-- Challenges & Solutions Section -->
+  <section class="project-section">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Challenges & Solutions</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="challenges-container"></div>
+    </div>
+  </section>
+
+  <!-- Code Deep Dive Section (Optional) -->
+  <section id="code-section" class="project-section" style="display: none;">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Technical Implementation</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="code-container"></div>
+    </div>
+  </section>
+
+  <!-- Results & Metrics Section -->
+  <section class="project-section">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Results & Metrics</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="metrics-grid" class="metrics-grid"></div>
+    </div>
+  </section>
+
+  <!-- Lessons Learned Section -->
+  <section class="project-section">
+    <div class="container">
+      <div class="section-divider">
+        <span class="line"></span>
+        <h2>Lessons Learned</h2>
+        <span class="line"></span>
+      </div>
+      
+      <div id="lessons-grid" class="lessons-grid"></div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="project-section cta-section">
+    <div class="container">
+      <h2>Explore More</h2>
+      <div class="cta-buttons">
+        <a id="github-link-bottom" href="#" target="_blank" class="btn btn-primary" style="display: none;">View Source Code</a>
+        <a href="/index.html#projects" class="btn btn-secondary">Back to All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Kevinn Ramirez. All rights reserved.</p>
+  </footer>
+
+  <!-- Image Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-image">
+    <div id="lightbox-caption"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="/projects/project-data.js"></script>
+  <script src="/projects/project-loader.js"></script>
 </body>
 </html>
